@@ -20,12 +20,23 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
+  dubbo:
+    server: true
+    application:
+      id: live-dubbo-provider
+      name: live-dubbo-provider
+    registry:
+      address: zookeeper://192.168.1.79:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    monitor:
+      protocol: registry
 server:
   port: 8081
   
 mybatis:
     mapper-locations: com.cnten.**.*.mapper.*.xml
-
 logging:
   level:
     com:
